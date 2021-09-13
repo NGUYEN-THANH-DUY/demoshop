@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo shop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="login.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="form-login" id="form-login">
+        <div class="form-login-main">
+            <h1 id="label-login">Đăng nhập</h1>
+            <input type="text" placeholder="Tên tài khoản" id="username"><br>
+            <input type="password" placeholder="Mật khẩu" id="password"> <br>
+            <button onclick="authentication()">Đăng nhập</button>
+            <p>Quên mật khẩu ?</p>
+        </div>
+    </div>
+    <header class="header">
+            <div class="header-bar">
+                <nav class="menu-bar">
+                    <li><a href="">Trang chủ</a></li>|
+                    <li><a href="">Giới thiệu</a></li> |
+                    <li><a href="">Sản phẩm</a></li> |
+                    <li><a href="">Liên hệ</a></li>
+                    <a href=""><i class="icon-fb fab fa-facebook"></i></a>
+                    <a href=""><i class="icon-ins fab fa-instagram"></i></a>
+                </nav>
+                <nav class="action-bar">
+                    <li >
+                        <a  class="notify" href=""><i class="far fa-bell"></i>
+                            Thông báo</a></li> |
+                    <li>
+                    <li>
+                        <a href="" class="username">Duy Nguyễn Thành</a></li> |
+                    <li>
+                        <a href="">
+                            <img src="https://scontent.fsgn3-1.fna.fbcdn.net/v/t1.6435-1/cp0/p86x86/236685316_2949624761982151_3019820191148445358_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=dbb9e7&_nc_ohc=34fXJMrXpxQAX9G6gpx&_nc_ht=scontent.fsgn3-1.fna&oh=1d8a01ffd8d3d0e9c8e9b009576f3f6e&oe=6163940B" alt="" class="avatar">
+                        </a>
+                    </li>
+                </nav>
+            </div>
+            <div class="header-search">
+                <div class="logo">
+                    <img class="img-logo" src="https://scontent.fsgn3-1.fna.fbcdn.net/v/t1.6435-1/cp0/p86x86/236685316_2949624761982151_3019820191148445358_n.jpg?_nc_cat=107&ccb=1-5&_nc_sid=dbb9e7&_nc_ohc=34fXJMrXpxQAX9G6gpx&_nc_ht=scontent.fsgn3-1.fna&oh=1d8a01ffd8d3d0e9c8e9b009576f3f6e&oe=6163940B" alt="">
+                </div>
+                <div class="search">
+                    <input type="text"  class="input-search" onclick="isShowHistory()" >
+                    <div class="search-history" id="history-view">
+                        <li id="item-histoy-search">Ba lô PUBG</li>
+                        <li id="item-histoy-search">Mặt nạ hacker</li>
+                        <li id="item-histoy-search">Joysticks</li>
+                        <li id="item-histoy-search">Óp lưng mặt kính</li>
+                        <li id="item-histoy-search">Ba lô PUBG</li>
+                        <li id="item-histoy-search">Mặt nạ hacker</li>
+                        <li id="item-histoy-search">Joysticks</li>
+                        <li id="item-histoy-search">Óp lưng mặt kính</li>
+                        <li id="item-histoy-search">Ba lô PUBG</li>
+                        <li id="item-histoy-search">Mặt nạ hacker</li>
+                        <li id="item-histoy-search">Joysticks</li>
+                        <li id="item-histoy-search">Óp lưng mặt kính</li>
+                    </div>
+                    <button class="btn-search" id="input-search" >Tìm kiếm
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div class="cart " onclick="isShowCart()">
+                    <div class="cart-quantity">2</div>
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="cart-list" id ="cart-view">
+                    <div class="header-cart">Thông tin giỏ hàng</div>
+                    <div class="header-cart-product">
+                        <li class="header-cart-product-item">
+                            <img src="https://tinhocngoisao.cdn.vccloud.vn/wp-content/uploads/2019/02/Balo-3-Game-Battlegrounds-1-1.jpg" alt="" class="img-product">
+                            <div class="name-product">
+                                <div class="label-name">Ba lô PUBG</div>
+                                <div class="discription-product">Cosplay nhân vật PUBG</div>
+                            </div>
+                            <i class="icon-delele fas fa-times"></i>
+                        </li>
+                        <li class="header-cart-product-item">
+                            <img src="https://tinhocngoisao.cdn.vccloud.vn/wp-content/uploads/2019/02/Balo-3-Game-Battlegrounds-1-1.jpg" alt="" class="img-product">
+                            <div class="name-product">
+                                <div class="label-name">Ba lô PUBG</div>
+                                <div class="discription-product">Cosplay nhân vật PUBG</div>
+                            </div>
+                            <i  class="icon-delele fas fa-times"></i>
+                        </li>
+                        <div class="footer-cart-product">Xem tất cả </div>
+                    </div>
+                </div>
+            </div>  
+    </header>
+    <main class="main">
+        <article class="main-category">
+            <h4 class="title-category">Danh mục</h4>
+            <li class="main-category-item--active">Đồ gia dụng</li>
+            <li >Đồ chơi trẻ em</li>
+            <li>Phụ kiện điện thoại</li>
+            <li>Quần áo</li>
+            <li>Thẻ cào</li>
+        </article>
+        <article class="main-product">
+            <div class="filter-product">
+                <div class="filter-product-sort">
+                    <label for="" class="filter-product-label">Sắp xếp theo: </label>
+                    <button class="filter-product-btn filter-product-btn-active filter-product-btn1">Liên quan</button>
+                    <button class="filter-product-btn filter-product-btn2">Mới nhất</button>
+                    <button class="filter-product-btn filter-product-btn3">Bán chạy</button>
+                    <div class="price-sort" onclick="isShowSortPrice()">
+                        <div class="current-price">Giá</div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="price-sort-selection" id="price-sort-selection">
+                        <li>Thấp đến cao</li>
+                        <li>Cao đến thấp</li>
+                    </div>
+                </div>
+                <div class="filter-product-page">
+                    <span class="current-page">1</span>
+                    <p>/100</p>
+                    <a href="" class="step-page">
+                        <i class="btn-before fas fa-chevron-left"></i>
+                    </a>
+                    <a href="">
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="list-product">
+                <div class="cart-products">
+                    <div class="cart-product-item">
+                        <img class="img-item" src="https://hanoicomputercdn.com/media/product/43812_anh_balo_pubg_cp_camouflage.jpg" alt="">
+                        <div class="cart-product-item-name">Ba lô PUBG</div>
+                        <div class="sticker-favorite">Yêu thích</div>
+                        <div class="sticker-off">20%</div>
+                        <div class="cart-product-item-price">
+                            <div class="cart-product-item-price-new">80.000đ</div> -
+                            <div class="cart-product-item-price-old">120.000đ</div>
+                        </div>
+                        <div class="rating">
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                        </div>
+                    </div>   
+                    <div class="cart-product-item">
+                        <img class="img-item" src="https://hanoicomputercdn.com/media/product/43812_anh_balo_pubg_cp_camouflage.jpg" alt="">
+                        <div class="cart-product-item-name">Ba lô PUBG</div>
+                        <div class="sticker-favorite">Yêu thích</div>
+                        <div class="sticker-off">20%</div>
+                        <div class="cart-product-item-price">
+                            <div class="cart-product-item-price-new">80.000đ</div> -
+                            <div class="cart-product-item-price-old">120.000đ</div>
+                        </div>
+                        <div class="rating">
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                        </div>
+                    </div> 
+                    <div class="cart-product-item">
+                        <img class="img-item" src="https://hanoicomputercdn.com/media/product/43812_anh_balo_pubg_cp_camouflage.jpg" alt="">
+                        <div class="cart-product-item-name">Ba lô PUBG</div>
+                        <div class="sticker-favorite">Yêu thích</div>
+                        <div class="sticker-off">20%</div>
+                        <div class="cart-product-item-price">
+                            <div class="cart-product-item-price-new">80.000đ</div> -
+                            <div class="cart-product-item-price-old">120.000đ</div>
+                        </div>
+                        <div class="rating">
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                        </div>
+                    </div> 
+                    <div class="cart-product-item">
+                        <img class="img-item" src="https://hanoicomputercdn.com/media/product/43812_anh_balo_pubg_cp_camouflage.jpg" alt="">
+                        <div class="cart-product-item-name">Ba lô PUBG</div>
+                        <div class="sticker-favorite">Yêu thích</div>
+                        <div class="sticker-off">20%</div>
+                        <div class="cart-product-item-price">
+                            <div class="cart-product-item-price-new">80.000đ</div> -
+                            <div class="cart-product-item-price-old">120.000đ</div>
+                        </div>
+                        <div class="rating">
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                        </div>
+                    </div>     
+                </div>    
+                <div class="cart-products">
+                    <div class="cart-product-item">
+                        <img class="img-item" src="https://hanoicomputercdn.com/media/product/43812_anh_balo_pubg_cp_camouflage.jpg" alt="">
+                        <div class="cart-product-item-name">Ba lô PUBG</div>
+                        <div class="sticker-favorite">Yêu thích</div>
+                        <div class="sticker-off">20%</div>
+                        <div class="cart-product-item-price">
+                            <div class="cart-product-item-price-new">80.000đ</div> -
+                            <div class="cart-product-item-price-old">120.000đ</div>
+                        </div>
+                        <div class="rating">
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                        </div>
+                    </div>   
+                    <div class="cart-product-item">
+                        <img class="img-item" src="https://hanoicomputercdn.com/media/product/43812_anh_balo_pubg_cp_camouflage.jpg" alt="">
+                        <div class="cart-product-item-name">Ba lô PUBG</div>
+                        <div class="sticker-favorite">Yêu thích</div>
+                        <div class="sticker-off">20%</div>
+                        <div class="cart-product-item-price">
+                            <div class="cart-product-item-price-new">80.000đ</div> -
+                            <div class="cart-product-item-price-old">120.000đ</div>
+                        </div>
+                        <div class="rating">
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                        </div>
+                    </div> 
+                    <div class="cart-product-item">
+                        <img class="img-item" src="https://hanoicomputercdn.com/media/product/43812_anh_balo_pubg_cp_camouflage.jpg" alt="">
+                        <div class="cart-product-item-name">Ba lô PUBG</div>
+                        <div class="sticker-favorite">Yêu thích</div>
+                        <div class="sticker-off">20%</div>
+                        <div class="cart-product-item-price">
+                            <div class="cart-product-item-price-new">80.000đ</div> -
+                            <div class="cart-product-item-price-old">120.000đ</div>
+                        </div>
+                        <div class="rating">
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                        </div>
+                    </div> 
+                    <div class="cart-product-item">
+                        <img class="img-item" src="https://hanoicomputercdn.com/media/product/43812_anh_balo_pubg_cp_camouflage.jpg" alt="">
+                        <div class="cart-product-item-name">Ba lô PUBG</div>
+                        <div class="sticker-favorite">Yêu thích</div>
+                        <div class="sticker-off">20%</div>
+                        <div class="cart-product-item-price">
+                            <div class="cart-product-item-price-new">80.000đ</div> -
+                            <div class="cart-product-item-price-old">120.000đ</div>
+                        </div>
+                        <div class="rating">
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                        </div>
+                    </div>     
+                </div>
+                <div class="cart-products">
+                    <div class="cart-product-item">
+                        <img class="img-item" src="https://hanoicomputercdn.com/media/product/43812_anh_balo_pubg_cp_camouflage.jpg" alt="">
+                        <div class="cart-product-item-name">Ba lô PUBG</div>
+                        <div class="sticker-favorite">Yêu thích</div>
+                        <div class="sticker-off">20%</div>
+                        <div class="cart-product-item-price">
+                            <div class="cart-product-item-price-new">80.000đ</div> -
+                            <div class="cart-product-item-price-old">120.000đ</div>
+                        </div>
+                        <div class="rating">
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                        </div>
+                    </div>   
+                    <div class="cart-product-item">
+                        <img class="img-item" src="https://hanoicomputercdn.com/media/product/43812_anh_balo_pubg_cp_camouflage.jpg" alt="">
+                        <div class="cart-product-item-name">Ba lô PUBG</div>
+                        <div class="sticker-favorite">Yêu thích</div>
+                        <div class="sticker-off">20%</div>
+                        <div class="cart-product-item-price">
+                            <div class="cart-product-item-price-new">80.000đ</div> -
+                            <div class="cart-product-item-price-old">120.000đ</div>
+                        </div>
+                        <div class="rating">
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                        </div>
+                    </div> 
+                    <div class="cart-product-item">
+                        <img class="img-item" src="https://hanoicomputercdn.com/media/product/43812_anh_balo_pubg_cp_camouflage.jpg" alt="">
+                        <div class="cart-product-item-name">Ba lô PUBG</div>
+                        <div class="sticker-favorite">Yêu thích</div>
+                        <div class="sticker-off">20%</div>
+                        <div class="cart-product-item-price">
+                            <div class="cart-product-item-price-new">80.000đ</div> -
+                            <div class="cart-product-item-price-old">120.000đ</div>
+                        </div>
+                        <div class="rating">
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                        </div>
+                    </div> 
+                    <div class="cart-product-item">
+                        <img class="img-item" src="https://hanoicomputercdn.com/media/product/43812_anh_balo_pubg_cp_camouflage.jpg" alt="">
+                        <div class="cart-product-item-name">Ba lô PUBG</div>
+                        <div class="sticker-favorite">Yêu thích</div>
+                        <div class="sticker-off">20%</div>
+                        <div class="cart-product-item-price">
+                            <div class="cart-product-item-price-new">80.000đ</div> -
+                            <div class="cart-product-item-price-old">120.000đ</div>
+                        </div>
+                        <div class="rating">
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                        </div>
+                    </div>     
+                </div>
+                <div class="cart-products">
+                    <div class="cart-product-item">
+                        <img class="img-item" src="https://hanoicomputercdn.com/media/product/43812_anh_balo_pubg_cp_camouflage.jpg" alt="">
+                        <div class="cart-product-item-name">Ba lô PUBG</div>
+                        <div class="sticker-favorite">Yêu thích</div>
+                        <div class="sticker-off">20%</div>
+                        <div class="cart-product-item-price">
+                            <div class="cart-product-item-price-new">80.000đ</div> -
+                            <div class="cart-product-item-price-old">120.000đ</div>
+                        </div>
+                        <div class="rating">
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                        </div>
+                    </div>   
+                    <div class="cart-product-item">
+                        <img class="img-item" src="https://hanoicomputercdn.com/media/product/43812_anh_balo_pubg_cp_camouflage.jpg" alt="">
+                        <div class="cart-product-item-name">Ba lô PUBG</div>
+                        <div class="sticker-favorite">Yêu thích</div>
+                        <div class="sticker-off">20%</div>
+                        <div class="cart-product-item-price">
+                            <div class="cart-product-item-price-new">80.000đ</div> -
+                            <div class="cart-product-item-price-old">120.000đ</div>
+                        </div>
+                        <div class="rating">
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                        </div>
+                    </div> 
+                    <div class="cart-product-item">
+                        <img class="img-item" src="https://hanoicomputercdn.com/media/product/43812_anh_balo_pubg_cp_camouflage.jpg" alt="">
+                        <div class="cart-product-item-name">Ba lô PUBG</div>
+                        <div class="sticker-favorite">Yêu thích</div>
+                        <div class="sticker-off">20%</div>
+                        <div class="cart-product-item-price">
+                            <div class="cart-product-item-price-new">80.000đ</div> -
+                            <div class="cart-product-item-price-old">120.000đ</div>
+                        </div>
+                        <div class="rating">
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                        </div>
+                    </div> 
+                    <div class="cart-product-item">
+                        <img class="img-item" src="https://hanoicomputercdn.com/media/product/43812_anh_balo_pubg_cp_camouflage.jpg" alt="">
+                        <div class="cart-product-item-name">Ba lô PUBG</div>
+                        <div class="sticker-favorite">Yêu thích</div>
+                        <div class="sticker-off">20%</div>
+                        <div class="cart-product-item-price">
+                            <div class="cart-product-item-price-new">80.000đ</div> -
+                            <div class="cart-product-item-price-old">120.000đ</div>
+                        </div>
+                        <div class="rating">
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                        </div>
+                    </div>     
+                </div>
+                <div class="cart-products">
+                    <div class="cart-product-item">
+                        <img class="img-item" src="https://hanoicomputercdn.com/media/product/43812_anh_balo_pubg_cp_camouflage.jpg" alt="">
+                        <div class="cart-product-item-name">Ba lô PUBG</div>
+                        <div class="sticker-favorite">Yêu thích</div>
+                        <div class="sticker-off">20%</div>
+                        <div class="cart-product-item-price">
+                            <div class="cart-product-item-price-new">80.000đ</div> -
+                            <div class="cart-product-item-price-old">120.000đ</div>
+                        </div>
+                        <div class="rating">
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                        </div>
+                    </div>   
+                    <div class="cart-product-item">
+                        <img class="img-item" src="https://hanoicomputercdn.com/media/product/43812_anh_balo_pubg_cp_camouflage.jpg" alt="">
+                        <div class="cart-product-item-name">Ba lô PUBG</div>
+                        <div class="sticker-favorite">Yêu thích</div>
+                        <div class="sticker-off">20%</div>
+                        <div class="cart-product-item-price">
+                            <div class="cart-product-item-price-new">80.000đ</div> -
+                            <div class="cart-product-item-price-old">120.000đ</div>
+                        </div>
+                        <div class="rating">
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                        </div>
+                    </div> 
+                    <div class="cart-product-item">
+                        <img class="img-item" src="https://hanoicomputercdn.com/media/product/43812_anh_balo_pubg_cp_camouflage.jpg" alt="">
+                        <div class="cart-product-item-name">Ba lô PUBG</div>
+                        <div class="sticker-favorite">Yêu thích</div>
+                        <div class="sticker-off">20%</div>
+                        <div class="cart-product-item-price">
+                            <div class="cart-product-item-price-new">80.000đ</div> -
+                            <div class="cart-product-item-price-old">120.000đ</div>
+                        </div>
+                        <div class="rating">
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                        </div>
+                    </div> 
+                    <div class="cart-product-item">
+                        <img class="img-item" src="https://hanoicomputercdn.com/media/product/43812_anh_balo_pubg_cp_camouflage.jpg" alt="">
+                        <div class="cart-product-item-name">Ba lô PUBG</div>
+                        <div class="sticker-favorite">Yêu thích</div>
+                        <div class="sticker-off">20%</div>
+                        <div class="cart-product-item-price">
+                            <div class="cart-product-item-price-new">80.000đ</div> -
+                            <div class="cart-product-item-price-old">120.000đ</div>
+                        </div>
+                        <div class="rating">
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                            <i class="fas fa-star golden-star"></i>
+                        </div>
+                    </div>     
+                </div>
+            </div>
+            <div class="pages-number">
+                <i class="btn-before fas fa-chevron-left"></i>
+                <div class="page-number page-number-active">1</div>
+                <div class="page-number">2</div>
+                <div class="page-number">3</div>
+                <div class="page-ellipsis">...</div>
+                <div class="page-number">14</div>
+                <div class="page-number">15</div>
+                <div class="page-number">16</div>
+                <i class="fas fa-chevron-right"></i>
+
+            </div>
+        </article>
+    </main>
+    <footer class="footer">
+        <div class="footer-content footer-content-1">Nguyễn Thành Duy</div>
+        <div class="footer-content footer-content-2">SDT: 0977 40 90 60 <br>
+            Email: duyntd.1604@gmail.com
+        </div>
+        <div class="footer-content footer-content-3">Đại học Sư Phạm Thành Phố Hồ Chí Minh</div>
+    </footer>
+</body>
+</html>
