@@ -15,3 +15,15 @@ function authentication(){
     }
     console.log(username,password)
 }
+
+
+/* -------------------------btn-close--------------------------------- */
+
+let isShowForm = true;
+function ShowFormLogin(){
+    if(isShowForm){
+        document.getElementById("form-login").style.display = "none";
+    } else {
+        document.getElementById("form-login").style.display = "flex";
+    }
+}

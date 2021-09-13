@@ -40,6 +40,8 @@ body{
     width: 100%;
 }
 
+
+
 .form-login{
     width: 100vw;
     height: 300vh;
@@ -50,6 +52,15 @@ body{
     display: flex;
     justify-content: center;
     padding-top: 200px
+}
+
+.icon-close-login{
+    color: #000;
+    position: absolute;
+    top: 212px;
+    right: 521px;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .form-login-main{
